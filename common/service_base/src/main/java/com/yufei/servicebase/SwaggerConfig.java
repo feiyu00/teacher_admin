@@ -42,7 +42,7 @@ public class SwaggerConfig {
 
                 .version("1.0")
 
-                .contact(new Contact("Helen", "http://atguigu.com", "55317332@qq.com"))
+                .contact(new Contact("Helen", "http://www.judexz.top", "2394493398@qq.com"))
                 .build();
     }
 }
