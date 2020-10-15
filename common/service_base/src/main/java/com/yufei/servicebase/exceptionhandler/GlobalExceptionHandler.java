@@ -6,7 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
-
+import com.yufei.servicebase.exceptionhandler.GuiLiException;
 /*
  *
  *
@@ -31,9 +31,9 @@ public class GlobalExceptionHandler {
         return R.error().message("执行了ArithmeticException异常处理");
     }
     //自定义异常处理
-    @ExceptionHandler(com.yufei.servicebase.exceptionhandler.GuiLiException.class)
+    @ExceptionHandler(GuiLiException.class)
     @ResponseBody //返回数据
-    public R error(com.yufei.servicebase.exceptionhandler.GuiLiException e) {
+    public R error(GuiLiException e) {
         log.error(ExceptionUtil.getMessage(e));
         e.printStackTrace();
         return R.error().code(e.getCode()).message(e.getMsg());

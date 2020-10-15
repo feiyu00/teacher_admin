@@ -2,7 +2,7 @@ package com.yufei.commonutils;
 
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
-
+import com.yufei.commonutils.ResultCode;
 import java.util.HashMap;
 import java.util.Map;
 @Data
@@ -38,7 +38,7 @@ public class R {
 
         r.setSuccess(true);
 
-        r.setCode(com.yufei.commonutils.ResultCode.SUCCESS);
+        r.setCode(ResultCode.SUCCESS);
 
         r.setMessage("成功");
 
@@ -53,7 +53,7 @@ public class R {
 
         r.setSuccess(false);
 
-        r.setCode(com.yufei.commonutils.ResultCode.ERROR);
+        r.setCode(ResultCode.ERROR);
 
         r.setMessage("失败");
 
