@@ -34,8 +34,8 @@ public class SubjectExcelListener extends AnalysisEventListener<SubjectData> {
         EduSubject existOneSubject = this.existOneSubject(subjectService, subjectData.getOneSubjectName());
         if (existOneSubject == null){
             existOneSubject = new EduSubject();
-            existOneSubject.setParentId("0");
-            existOneSubject.setTitle(subjectData.getOneSubjectName());
+            existOneSubject.setParentId("0").setTitle(subjectData.getOneSubjectName());
+//            existOneSubject.setTitle(subjectData.getOneSubjectName());
             subjectService.save(existOneSubject);
         }
         //获取一级分类的id值
@@ -43,8 +43,8 @@ public class SubjectExcelListener extends AnalysisEventListener<SubjectData> {
         EduSubject existTwoSubject = this.existTwoSubject(pid, subjectService, subjectData.getTwoSubjectName());
         if (existTwoSubject == null){
             existTwoSubject = new EduSubject();
-            existTwoSubject.setParentId(pid);
-            existTwoSubject.setTitle(subjectData.getTwoSubjectName());
+            existTwoSubject.setParentId(pid).setTitle(subjectData.getTwoSubjectName());
+//            existTwoSubject.setTitle(subjectData.getTwoSubjectName());
             subjectService.save(existTwoSubject);
         }
     }
@@ -63,6 +63,7 @@ public class SubjectExcelListener extends AnalysisEventListener<SubjectData> {
         wrapper.eq("parent_id",pid);
         EduSubject twoSubject = subjectService.getOne(wrapper);
         return twoSubject;
+
     }
 
     @Override

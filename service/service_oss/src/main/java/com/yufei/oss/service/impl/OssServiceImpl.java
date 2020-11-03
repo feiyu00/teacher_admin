@@ -34,7 +34,6 @@ public class OssServiceImpl implements OssService {
             //获取当前日期
             String datePath = new DateTime().toString("yyyy/MM/dd/");
             fileName = datePath+fileName;
-
             ossClient.putObject(bucketName, fileName, inputStream);
             // 关闭OSSClient。
             ossClient.shutdown();
